@@ -1,0 +1,52 @@
+.mybrand {
+
+    text-align: center;
+    color: #be29ec;
+    font-weight: bolder;
+    font-size: 50px;
+    margin-bottom: 13px
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+.mylogin {
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0px 0px 5px 0px grey;
+}
+
+.mytext:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.inputs:focus {
+
+    outline: 4px solid #efbbff;
+    border-color: white;
+
+}
+
+/* Validation */
+.invalid-input {
+    border: 2px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+/* .footer {
+    padding: 10px;
+    text-align: center;
+    color: #800080;
+    font-size: 14px;
+    background-color: #f8f8f8;
+    width: 100%;
+  } */

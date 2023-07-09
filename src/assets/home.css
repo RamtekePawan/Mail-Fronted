@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+
+body{
+    background-image: linear-gradient(0deg, rgb(248, 250, 247)0%, rgb(181, 211, 216)100% );
+    /* background-color: #d896ff; */
+
+
+}
+section {
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+section #text {
+    position: absolute;
+    color: rgb(238, 227, 227);
+    font-size: 10vw;
+    text-align: center;
+    line-height: 0.55em;
+    font-family: 'Rancho', cursive;
+    transform: translateY(-50%);
+
+}
+
+section #text span {
+    font-size: 0.20em;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#btn {
+    text-decoration: none;
+    display: inline block;
+    padding: 8px 30px;
+    background: black;
+    color: aliceblue;
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    transform: translateY(100px);
+}
+
+.sec {
+    position: relative;
+    /* padding: 100px; */
+    /* background: rgb(172, 88, 88); */
+
+}
+
+.sec h2 {
+    font-size: 3.5em;
+    color: aliceblue;
+    margin-bottom: 10px;
+
+}
+
+.sec p {
+    font-size: 1em;
+    /* color: whitesmoke; */
+
+}
+
+.welcome {
+
+    position: relative;
+    width: 100%;
+    /* min-height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: absolute; */
+    color: rgb(238, 227, 227);
+    font-size: 9vw;
+    font-family: 'Rancho', cursive;
+    color: #efbbff;
+
+
+}
+
+body {
+
+    background-color: rgb(138, 23, 23);
+    /* background-image: url(C:\Users\Rakesh\Desktop\WPT-FINAL-FRONT\img\bg3.avif); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* height: 100vh; */
+    width: 100%;
+
+    overflow-x: hidden;
+
+}
+
+/* Navbar */
+
+.mytags:hover {
+
+    font-size: 101%;
+    text-decoration: underline;
+}
+
+
+/* EDITED STYLE NEW */
+
+
+
+
+
+
+.hs-text {
+    /* padding-top: 90px; */
+    max-width: 475px;
+    padding-left: 45px;
+}
+
+.titles {
+    font-weight: bold;
+    color: #510051;
+    font-family: 'Patua One', cursive;
+}
+
+
+

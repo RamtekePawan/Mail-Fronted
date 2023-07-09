@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+.mymain {
+    height: 100vh;
+    
+    /* background-color: #f3e2f8; */
+    justify-content: center;
+    align-items: center;
+}
+
+.mybrand {
+    text-align: center;
+    color: #0bbfb7;
+    font-weight: bolder;
+    font-size: 50px;
+    margin-bottom: 13px;
+
+}
+
+body {
+    overflow-x: hidden;
+
+}
+.mymarquee{
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: larger;
+    color:white
+}
+
+.mycontact {
+    background-color: white;
+    padding: 16px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 0px 5px 0px rgba(190, 182, 182, 0.95);
+}
+
+.myacct {
+    text-align: center;
+    font-size: 23px;
+}
+
+.inputs:focus {
+
+    outline: 4px solid #efbbff;
+    border-color: white;
+
+}
+
+.inputs {
+    color: #606770;
+    margin-bottom: 15px;
+
+}
+
+.mytags {
+
+    color: #606770;
+    font-size: 12px;
+    margin: 4px;
+    margin-top: 8px;
+
+}
+
+
+.myclick {
+    color: #385898;
+}
+
+.myclick:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.myhaveacct:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.inputs:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,118 @@
+.mymain {
+    /* background-color: #efbbff; */
+    justify-content: center;
+    align-items: center;
+}
+
+.mybrand {
+    text-align: center;
+    color: #be29ec;
+    font-weight: bolder;
+    font-size: 50px;
+    margin-bottom: 13px;
+
+}
+
+.myregister {
+    background-color: white;
+    padding: 16px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 0px 5px 0px rgba(190, 182, 182, 0.95);
+}
+
+.myacct {
+    text-align: center;
+    font-size: 23px;
+}
+
+.inputs:focus,
+.dates:focus {
+
+    outline: 4px solid #efbbff;
+    border-color: white;
+
+}
+
+.inputs {
+    color: #606770;
+
+}
+
+.mytags {
+
+    color: #606770;
+    font-size: 12px;
+    margin: 4px;
+    margin-top: 8px;
+
+}
+
+.mydates {
+    justify-content: center;
+    justify-content: space-between;
+    background: white;
+    margin: 0 1px;
+}
+
+.gender {
+    display: none;
+}
+
+.myclick {
+    color: #385898;
+}
+
+.myclick:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.myhaveacct:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.inputs:hover,
+.dates:hover {
+    cursor: pointer;
+}
+
+.mygender:hover {
+    cursor: pointer;
+}
+
+.mygender {
+    color: #606770;
+    text-align: center;
+}
+
+.mydate {
+    background-color: white;
+
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+input[type="radio"]:checked+label {
+    background-color: #efbbff;
+    border-color: #efbbff;
+    box-shadow: 0 0 5px #be29ec;
+    transition: 0.5s ease-in-out;
+    color: #5e0978;
+}
+
+/* validation */
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.error-input {
+    border-color: red;
+    outline-color: red;
+}

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+body {
+    text-align: center;
+    z-index: 1;
+    /* background-color: #efbbff; */
+    overflow-x: hidden;
+  }
+
+.titles{
+  font-family: 'Rancho', cursive;
+}
+.main{
+  height: 100%;
+}

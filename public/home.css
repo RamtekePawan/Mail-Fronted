@@ -1,0 +1,662 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+
+section {
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+section #text {
+    position: absolute;
+    color: rgb(238, 227, 227);
+    font-size: 10vw;
+    text-align: center;
+    line-height: 0.55em;
+    font-family: 'Rancho', cursive;
+    transform: translateY(-50%);
+
+}
+
+section #text span {
+    font-size: 0.20em;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#btn {
+    text-decoration: none;
+    display: inline block;
+    padding: 8px 30px;
+    background: black;
+    color: aliceblue;
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    transform: translateY(100px);
+}
+
+.sec {
+    position: relative;
+    /* padding: 100px; */
+    /* background: rgb(172, 88, 88); */
+
+}
+
+.sec h2 {
+    font-size: 3.5em;
+    color: aliceblue;
+    margin-bottom: 10px;
+
+}
+
+.sec p {
+    font-size: 1em;
+    /* color: whitesmoke; */
+
+}
+
+.welcome {
+
+    position: relative;
+    width: 100%;
+    /* min-height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: absolute; */
+    color: rgb(238, 227, 227);
+    font-size: 9vw;
+    font-family: 'Rancho', cursive;
+    color:#efbbff;
+
+
+}
+
+body {
+  
+    background-color: rgb(138, 23, 23);
+    background-image: url(img/bg3.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* height: 100vh; */
+    width: 100%;
+
+    overflow-x: hidden; 
+
+}
+
+/* Navbar */
+.mytags:hover {
+    
+    font-size: 110%;
+    text-decoration:underline;
+}
+
+
+/* EDITED STYLE NEW */
+.box1 {
+    flex: 1;
+    background-color: 	#d896ff;
+    width: 50%;
+    padding: 5px;
+    /* border: 1px solid #fff; */
+    /* box-shadow: 5px 0px 2px red; */
+
+}
+
+.box2 {
+    flex: 3;
+    background-color: 	#be29ec ;
+    /* height: 100%; */
+    width: 50%;
+    /* padding: 15px; */
+    /* border: 1px solid #fff; */
+}
+
+.box1 h1 {
+    font-size: 20px;
+    margin: 10px 0px 0px 10px;
+    font-weight: 400;
+}
+
+.playlist {
+    margin: 30px 0px 0px 20px;
+}
+
+.playlist h4 {
+    font-size: 15px;
+    font-weight: 400;
+    padding-bottom: 10px;
+    
+    cursor: pointer;
+    display: flex;
+    transition: 0.3s linear;
+}
+
+.playlist h4:hover {
+    color: #be29ec;
+}
+
+.playlist h4 .bi {
+    color: #be29ec;
+}
+
+.playlist .active {
+    color: rgb(0, 0, 0);
+}
+
+/* .playlist .active span{
+       display: none;//deleted span in html
+   
+   } */
+
+.playlist .active .bi {
+    display: flex;
+    margin-right: 10px;
+}
+
+.left_songs {
+    width: 100%;
+    height: 430px;
+    /* border: 1px solid black; */
+    margin-top: 30px;
+    overflow: auto;
+    /*  used for scrolling purpose if we add more songs in list */
+}
+
+.left_songs::-webkit-scrollbar {
+    display: none;
+    /* to hide scroll bar */
+}
+
+.left_songs li {
+    /* to remove dot */
+    list-style-type: none;
+    position: relative;
+    padding: 5px 0px 5px 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+.left_songs li:hover {
+    color: #fff;
+}
+
+.left_songs li span {
+    font-size: 10px;
+    font-weight: 800px;
+    color: gray;
+}
+
+.left_songs li h5 {
+    font-size: 11px;
+    margin-left: 15px;
+    width: 170px;
+    /* border: 1px solid #fff; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.left_songs li h5 .subtitle {
+    font-size: 10px;
+    color: gray;
+}
+
+/* END OF BOX 1 STYLING */
+
+
+/* start of BOX 2 styling */
+
+.box2 .navbar:hover {
+    color: #fff;
+
+}
+
+/* songs */
+.box2 .popular_songs {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    margin-top: 15px;
+    /* border: 1px solid #fff; */
+}
+
+.box2 .popular_songs .list1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list1 .bi {
+    color: gray;
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+.list1 .bi:hover {
+    color: #fff;
+}
+
+.popular_songs .cardsBt {
+    width: 100%;
+    height: 170px;
+    /* scroll bar height adjust */
+    margin-top: 15px;
+    display: flex;
+    /* border: 1px solid #fff; */
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.popular_songs .cardsBt::-webkit-scrollbar {
+    display: none;
+    /*  used to adjust the content/images/cards which are gone outside (overflow,scrollbar,webkit) */
+}
+
+.cardsBt .card {
+    min-width: 100px;
+    height: 150px;
+    list-style-type: none;
+    margin-right: 10px;
+    transition: .3s linear;
+}
+
+.cardsBt .card:hover {
+    background: gray;
+}
+
+/* .cardsBt .card .img_play .bi{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+} */
+
+.cardsBt .img_play {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.cardsBt .img_play img {
+    width: 100%;
+    height: 100%;
+}
+
+.cardsBt .img_play .bi {
+    position: absolute;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s linear;
+    opacity: 0;
+}
+
+.cardsBt .img_play:hover .bi {
+
+    opacity: 1;
+}
+
+.cardsBt h5 {
+    padding: 5px 0px 0px 5px;
+    line-height: 15px;
+    font-size: 11px;
+    /* margin-left: 15px; */
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.cardsBt .subtitle {
+    /* align-items: center; */
+    /* width: 100px; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 9px;
+    color: gray;
+}
+
+
+/* atrtist  */
+.box2 .popular_artists {
+    width: 90%;
+    height: auto;
+    /* border: 1px solid #fff; */
+    margin: auto;
+    margin-top: 15px;
+}
+
+.box2 .popular_artists .list2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popular_artists .bi {
+    color: #a4a8b4;
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+.popular_artists .bi:hover {
+    color: #fff;
+}
+
+.popular_artists .artists {
+    width: 100%;
+    height: 90px;
+    /* scroll bar height adjust */
+    /* border: 1px solid #fff; */
+    margin-top: 10px;
+    display: flex;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.popular_artists .artists::-webkit-scrollbar {
+    display: none;
+}
+
+.popular_artists li {
+    list-style-type: none;
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.popular_artists img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+
+}
+
+.hs-text {
+    /* padding-top: 90px; */
+    max-width: 475px;
+    padding-left: 45px;
+}
+
+.titles{
+    font-weight: bold;
+    color:#510051;
+    font-family: 'Patua One', cursive;
+}
+
+
+
+
+.footer .box-container{
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    gap:20px;
+    padding-left: 200px;
+    padding-right: 10px;
+}
+
+.footer .box-container .box h3{
+
+    color:black;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a{
+    display: block;
+   
+    color:gray;
+    /* padding: 50px; */
+}
+
+.footer .box-container .box a i{
+    padding-right: .5rem;
+    color:violet;
+}
+
+.footer .box-container .box a:hover i{
+    padding-right:100px;
+}
+
+.footer .credit{
+    /* padding: 50px;
+    padding-top: 100px;
+    margin-top: 100px; */
+    text-align: center;
+    font-size: 25px;
+    color:gray;
+    border-top: .1rem solid rgba(0, 0, 0, .1);
+}
+
+.footer .credit span{
+    color:violet;
+}
+
+
+
+/* music player */
+
+
+.master_play {
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+}
+ .master_play .wave{
+    width: 30px;
+    height: 30px;
+    /* border: 1px solid #fff; */
+    padding-bottom: 5px;
+    display: flex;
+    align-items: flex-end;
+    margin-right: 10px;
+}
+ .master_play .wave .wave1{
+    width: 3px;
+    height: 10px;
+    margin-right: 3px ;
+    border-radius: 10px 10px 0px 0px ;
+    background: violet;
+    animation: unset;
+}
+ .master_play .wave .wave1:nth-child(2){
+    height: 13px;
+    animation-delay: .4s;
+}
+ .master_play .wave .wave1:nth-child(3){
+    height: 8px;
+    animation-delay: .8s;
+}
+/* javascript class wave  */
+ .master_play .active2 .wave1{
+    animation: wave .5s linear infinite;
+}
+ .master_play .active2 .wave1:nth-child(2){
+    animation-delay: .4s;
+}
+ .master_play .active2 .wave1:nth-child(3){
+    animation-delay: .8s;
+}
+
+@keyframes wave {
+    0%{
+        height: 10px;
+    }
+    50%{
+        height: 15px;
+    }
+    100%{
+        height: 10px;
+    }
+}
+ .master_play img {
+    width: 35px;
+    height: 35px;
+}
+ .master_play h5 {
+    width: 130px;
+    font-size: 13px;
+    margin-left: 15px;
+    color: #fff;
+    line-height: 17px;
+}
+ .master_play h5 .subtitle{
+   font-size: 11px;
+   color: #4c5262;
+}
+ .master_play .icon{
+   font-size: 20px;
+   color: black;
+   margin: 0px 20px 0px 40px;
+   outline: none;
+}
+ .master_play .icon .bi{
+ cursor: pointer;
+ outline: none;
+}
+ .master_play .icon .bi:nth-child(2){
+border: 1px solid rgb(105, 105, 170,.1);
+border-radius: 50%;
+padding: 1px 4px 0px 6px;
+margin: 0px 5px;
+transition: .3s linear;
+}
+
+ .master_play span {
+    color: black;
+    width: 32px;
+    font-size: 11px;
+    font-weight: 400;
+}
+.master_play #currentStart{
+    margin: 0px 0px 0px 20px;
+}
+
+ .master_play .bar {
+    position: relative;
+    width: 43%;
+    height: 2px;
+    background: rgb(105, 105, 170,.1);
+    margin: 0px 15px 0px 10px;
+}
+ .master_play .bar .bar2{
+   position: absolute;
+   background: #36e2ec;
+   width: 0%;
+   height: 100%;
+   top: 0;
+   transition: 1s linear;
+}
+ .master_play .bar .dot{
+   position: absolute;
+   width: 5px;
+   height: 5px;
+   background: #36e2ec;
+   border-radius: 50%;
+   left: 0%;
+   top: -1px;
+   transition: 1s linear;
+}
+ .master_play .bar .dot::before{
+    content: '';
+   position: absolute;
+   width: 15px;
+   height: 15px;
+   border:1px solid #36e2ec;
+   border-radius: 50%;
+   left: -6px;
+   top: -6px;
+  box-shadow: inset 0px 0px 3px #36e2ec;
+}
+ .master_play .bar input{
+   position: absolute;
+   width: 100%;
+   top: -6px;
+   left: 0;
+   cursor: pointer;
+   z-index: 99999999;
+   transition: 3s linear;
+   opacity: 0;
+}
+ .master_play .vol{
+  position: relative;
+  width: 100px;
+  height: 2px;
+  margin-left: 50px;
+ background: rgb(105, 105, 170,.1); 
+}
+ .master_play .vol .bi{
+position: absolute;
+color: black;
+font-size: 25px;
+top: -17px;
+left: -30px;
+}
+ .master_play .vol input{
+    position: absolute;
+    width: 100%;
+    top: -10px;
+    left: 0;
+    cursor: pointer;
+    z-index: 99999999;
+    transition: 3s linear;
+    opacity: 0;
+ }
+
+  .master_play .vol .vol_bar{
+    position: absolute;
+    background: #36e2ec;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    transition: 1s linear;
+ }
+ .master_play .vol .dot{
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #36e2ec;
+    border-radius: 50%;
+    left: 0%;
+    top: -1px;
+    transition: 1s linear;
+ }
+ .master_play .vol .dot::before{
+     content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border:1px solid #36e2ec;
+    border-radius: 50%;
+    left: -6px;
+    top: -6px;
+   box-shadow: inset 0px 0px 3px #36e2ec;
+ }
+
+
+
