@@ -21,15 +21,17 @@ function App() {
   const [userLoginData, setUserLoginData] = useState(null);
 
   useEffect(() => {
+
     const loginData = localStorage.getItem("loginData") ? JSON.parse(localStorage.getItem("loginData")) : null;
     if (loginData) {
       setUserLoginData(loginData);
     } else {
       setUserLoginData(null)
     }
+
     return () => { setUserLoginData(null) }
   }, [])
-
+  console.log("App.js wala" + JSON.stringify(userLoginData));
   return (
     <BrowserRouter>
       <NavigationBar userLoginData={userLoginData} setUserLoginData={setUserLoginData} />
