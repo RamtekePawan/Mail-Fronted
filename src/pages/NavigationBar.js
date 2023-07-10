@@ -8,7 +8,8 @@ import {
     faAddressCard,
     faUsersLine,
     faHome,
-    faSignIn
+    faSignIn,
+    faMailForward
 } from "@fortawesome/free-solid-svg-icons";
 import { Nav, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
@@ -17,7 +18,7 @@ import { Link, useNavigate } from "react-router-dom";
 function NavigationBar(props) {
     const navigate = useNavigate()
     const { userLoginData, setUserLoginData } = props;
-        
+
     let logOutAction = () => {
         localStorage.removeItem("loginData");
         localStorage.removeItem("loginStatus");
@@ -163,6 +164,25 @@ function NavigationBar(props) {
                                             placement="bottom"
                                         >
                                             <FontAwesomeIcon icon={faEnvelope} size="2x" />
+                                        </OverlayTrigger>
+                                    </Nav.Link>
+                                </li>
+                            }
+
+                        {userLoginData &&
+                                <li className="nav-item mytags">
+                                    <Nav.Link
+                                        className="nav-link active"
+                                        aria-current="page"
+                                        as={Link}
+                                        to="/send-mail"
+                                        style={{ color: "#0bbfb7", margin: "0 5px" }}
+                                    >
+                                        <OverlayTrigger
+                                            overlay={<Tooltip id="tooltip">Send Mail</Tooltip>}
+                                            placement="bottom"
+                                        >
+                                            <FontAwesomeIcon icon={faMailForward} size="2x" />
                                         </OverlayTrigger>
                                     </Nav.Link>
                                 </li>

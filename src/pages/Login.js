@@ -54,6 +54,7 @@ function Login(props) {
       // });
 
       const formData = new FormData();
+
       // console.log(Object.keys(formValues))
       Object.keys(formValues).forEach(key => {
         formData.append(key, formValues[key]); // formdata:{ email: "email"}
@@ -68,7 +69,7 @@ function Login(props) {
         }, 2000);
         return;
       }
-
+      
       setUserLoginData(data); //stores to local storage
       localStorage.setItem("loginData", JSON.stringify(data));
       toast.success('Login Successful');
@@ -95,7 +96,7 @@ function Login(props) {
     <>
       <div
         className="row d-flex flex-column justify-content-center align-items-center"
-        style={{ backgroundColor: "#efbbff", height: "100vh" }}
+        style={{ backgroundColor: "", height: "100vh" }}
       >
         <div className="col-sm-8 col-md-6 col-lg-4">
           <div className="mybrand">

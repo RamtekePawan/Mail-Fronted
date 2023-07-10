@@ -1,6 +1,3 @@
-import {faHome } from '@fortawesome/free-solid-svg-icons';
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 function About() {
@@ -66,10 +63,11 @@ function About() {
               className="row justify-content-center "
               style={{ justifyContent: "center", alignItems: "center" }}
             >
+
               <div className="col-sm-6 col-md-3">
                 <div className="card" style={{ width: "18rem" }}>
                   <img
-                    src="images/"
+                    src="images/Pawans.jpg"
                     className="card-img-top"
                     alt="..."
                   />
@@ -78,10 +76,10 @@ function About() {
                       {" "}
                     Pawan Ramteke
                     </h5>
-                    <p ><i class="fa-solid fa-envelope"></i> pawanramteke@gmail.com</p>
+                    <p ><i className="fa-solid fa-envelope"></i> pawanramteke@gmail.com</p>
               
                     <p className="card-text">
-                      <i class="fa-solid fa-phone"></i>+91-77749 97165
+                      <i className="fa-solid fa-phone"></i>+91-77749 97165
                     </p>
                   </div>
                 </div>
@@ -102,11 +100,11 @@ function About() {
                     <h5 className="card-title " style={{ color: "#660066" }}>
                       Shubhashri Patil
                     </h5>
-                    <p><i class="fa-solid fa-envelope"></i> shubhashribpatil@gmail.com</p>
+                    <p><i className="fa-solid fa-envelope"></i> shubhashribpatil@gmail.com</p>
                    
 
                     <p className="card-text">
-                      <i class="fa-solid fa-phone"></i>+91-9834309365
+                      <i className="fa-solid fa-phone"></i>+91-9834309365
                     </p>
                   </div>
                 </div>
@@ -124,10 +122,10 @@ function About() {
                       {" "}
                      Samruddhi Ghodgavkar
                     </h5>
-                    <p ><i class="fa-solid fa-envelope"></i> sonarsamruddhi775@gmail.com</p>
+                    <p ><i className="fa-solid fa-envelope"></i> sonarsamruddhi775@gmail.com</p>
               
                     <p className="card-text">
-                      <i class="fa-solid fa-phone"></i>+91-7058660928
+                      <i className="fa-solid fa-phone"></i>+91-7058660928
                     </p>
                   </div>
                 </div>

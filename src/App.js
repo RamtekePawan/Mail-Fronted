@@ -15,6 +15,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 import NavigationBar from "./pages/NavigationBar";
+import SendMail from "./pages/SendMail";
 
 function App() {
 
@@ -36,7 +37,7 @@ function App() {
     <BrowserRouter>
       <NavigationBar userLoginData={userLoginData} setUserLoginData={setUserLoginData} />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login setUserLoginData={setUserLoginData} />} />
         <Route path="/home" element={<Home />} />
         <Route path="/register" element={<Register />} />
@@ -44,6 +45,7 @@ function App() {
         <Route path="/userList" element={<UserList />} />
         <Route path="/about" element={<About />} />
         <Route path="/mail" element={<Mails userLoginData={userLoginData} />} />   {/*props.userLoginData*/}
+        <Route path="/send-mail" element={<SendMail userLoginData={userLoginData} />} />
       </Routes>
     </BrowserRouter>
   );

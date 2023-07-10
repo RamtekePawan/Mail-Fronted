@@ -29,6 +29,7 @@ function Mails(props) {
     }, []);
     console.log("Mail wala UserData :" + JSON.stringify(userLoginData));
     let getAllRecieved = async () => {
+
         let url = `http://localhost:5050/recieve?userId=${userId}`;
         console.log("2");
         await axios.get(url).then((res) => {
@@ -55,7 +56,7 @@ function Mails(props) {
     return (
         <div>
             <div className='row bg-body-secondary p-5 mt-5 g-5 mb-3 d-flex'>
-                <div className='col-3 bg-body-tertiary ' style={{ height: "100vh" }}>
+                <div className='col-3 bg-body-tertiary ' style={{ height: "auto" }}>
                     <div className='row mb-3'>
                         <button className='bg-primary rounded-5' onClick={handleRecieve}><h6>Message Recieved</h6></button>
                     </div>
@@ -64,14 +65,15 @@ function Mails(props) {
                     </div>
                 </div>
 
-                <div className='row'>
+                <div className='col-9'>
 
                     {button === "recieved" &&
                         recievedMailList.map((item) => (
                             <div className='col-9'>
                                 <div className='row bg-info-subtle border-bottom border-black'>
-                                    <div className='col-md-3 col-sm-6 bg-primary'> {item.user.userName}</div>
-                                    <div className='col-md-3 col-sm-6 bg-secondary'> {item.subject}</div>
+                                    <div className='col-md-2 col-sm-6 bg-primary'> {item.user.userName}</div>
+                                    <div className='col-md-2 col-sm-6 bg-primary'>Recieved</div>
+                                    <div className='col-md-2 col-sm-6 bg-secondary'> {item.subject}</div>
                                     <div className='col-md-6 col-sm-12 bg-light-subtle'>{item.message}</div>
                                 </div>
                             </div>
@@ -82,8 +84,9 @@ function Mails(props) {
                         sentMailList.map((item) => (
                             <div className='col-9'>
                                 <div className='row bg-info-subtle border-bottom border-black'>
-                                    <div className='col-md-3 col-sm-6 bg-primary'>{item.user.userName}</div>
-                                    <div className='col-md-3 col-sm-6 bg-secondary'>{item.subject}</div>
+                                    <div className='col-md-2 col-sm-6 bg-primary'>{item.user.userName}</div>
+                                    <div className='col-md-2 col-sm-6 bg-primary'>Sent</div>
+                                    <div className='col-md-2 col-sm-6 bg-secondary'>{item.subject}</div>
                                     <div className='col-md-6 col-sm-12 bg-light-subtle'>{item.message}</div>
                                 </div>
                             </div>

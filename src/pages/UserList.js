@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {faHome } from '@fortawesome/free-solid-svg-icons';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
 
 function UserList() {
-  const [userList, setUserList] = useState([]);
-  const [editUser, setEditUser] = useState(null);
+  const [userList, setUserList] = useState([]); // array of objects
+  const [editUser, setEditUser] = useState(null);//useState({name:"",email})
   const [editedUser, setEditedUser] = useState({});
 
   useEffect(() => {
@@ -16,25 +17,27 @@ function UserList() {
 
   const getUsers = async () => {
     try {
-      const url = "http://localhost:4000/readAll";
-      const res = await fetch(url);
-      const list = await res.json();
+      const url = "http://localhost:5050/get-users";
+      const res = await axios.post(url);
+      const list = await res.data;
       setUserList(list);
+      console.log(list);
     } catch (error) {
       console.error(error);
     }
   };
 
+
   const deleteUser = async (item) => {
     try {
-      if (item.email === 'rakesh123@gmail.com') {
+      if (item.userEmail === 'admin@gmail.com') {
         toast.error("You cannot delete the admin");
         return;
       }
-      const confirmDelete = window.confirm(`Do you want to delete ${item.email}`);
+      const confirmDelete = window.confirm(`Do you want to delete ${item.userEmail}`);
       if (confirmDelete) {
-        const url = `http://localhost:4000/deleteUser?email=${item.email}`;
-        const res = await fetch(url);
+        const url = `http://localhost:5050/delete-user?email=${item.userEmail}`;
+        const res = await axios.get(url);
         if (res.status === 500) {
           const errorMessage = await res.text();
           throw new Error(errorMessage);
@@ -65,7 +68,13 @@ function UserList() {
 
   const handleSaveEdit = async () => {
     try {
-      const url = `http://localhost:4000/updateUser`;
+
+      const url = `http://localhost:5050/update-user2`;
+      // const formData = new FormData();
+      // formData.append('userEmail', editedUser.userEmail);
+      // formData.append('userName', editedUser.userName);
+      // formData.append('userPassword', editedUser.userPassword);
+
       const res = await fetch(url, {
         method: 'POST',
         headers: {
@@ -73,12 +82,12 @@ function UserList() {
         },
         body: JSON.stringify(editedUser),
       });
-  
+
       if (res.status === 500) {
         const errorMessage = await res.text();
         throw new Error(errorMessage);
       }
-  
+
       setEditUser(null);
       getUsers();
       toast.success("User updated successfully");
@@ -86,7 +95,7 @@ function UserList() {
       toast.error(error.message);
     }
   };
-  
+
 
   return (
     <>
@@ -95,97 +104,73 @@ function UserList() {
         style={{ backgroundColor: "", height: "100vh" }}
       >
         <div className="col-sm-12 col-md-11">
-        
-          <a href="http://localhost:3000/home" style={{color: '#800080', textDecoration: 'none'}}>  <OverlayTrigger
-                    overlay={<Tooltip id="tooltip">Home</Tooltip>}
-                    placement="bottom"
-                  >
-                    <button
-                      className=" btn"
-                      type="button"
-                      style={{
-                        color: "#efbbff",
-                        background: "#0bbfb7",
-                        marginRight: 2,
-                        marginBottom: "5px"
-                      }}
-                    >
-                      {" "}
-                      <FontAwesomeIcon icon={faHome} />
-                    </button>
-                  </OverlayTrigger></a>
 
-                  <h1
+          {/* Heading */}
+          <h1
             className="form-control-lg d-flex justify-content-center"
-            style={{ color: "#0bbfb7", backgroundColor: "" }}
+            style={{ color: "#0bbfb7"}}
           >
-            PS2Mails UserList
-          
-
+            PS2Mails userList
           </h1>
+
+        {/* Table */}
           <div className="form-control">
             <table className="table">
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">First Name</th>
-                  <th scope="col">Last Name</th>
+                  <th scope="col">Name</th>
                   <th scope="col">Email</th>
-                  <th scope="col">D.O.B</th>
-                  <th scope="col">Gender</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
+
               <tbody>
+                {/* Table Body Mapping */}
                 {userList.map((item, index) => (
-                  <tr key={item.email}>
+                  <tr key={item.userEmail}>
+
                     <th scope="row">{index + 1}</th>
-                    <td className="text-capitalize">{item.firstname}</td>
-                    <td className="text-capitalize">{item.lastname}</td>
-                    <td>{item.email}</td>
-                    <td>{item.dob}</td>
-                    <td>{item.gender}</td>
+                    <td className="text-capitalize">{item.userName}</td>
+                    <td>{item.userEmail}</td>
+                    <td>{item.userPassword}</td>
                     <td className="fs-6">
-                      {editUser && editUser.email === item.email ? (
+                      {editUser && editUser.userEmail === item.userEmail ? (
                         <>
+
                           <input
                             type="text"
-                            name="firstname"
-                            value={editedUser.firstname}
+                            name="userName"
+                            value={editedUser.userName}
                             onChange={handleInputChange}
                           />
                           <input
                             type="text"
-                            name="lastname"
-                            value={editedUser.lastname}
+                            name="userEmail"
+                            value={editedUser.userEmail}
                             onChange={handleInputChange}
                           />
                           <input
                             type="text"
-                            name="dob"
-                            value={editedUser.dob}
+                            name="userPassword"
+                            value={editedUser.userPassword}
                             onChange={handleInputChange}
                           />
-                          <input
-                            type="text"
-                            name="gender"
-                            value={editedUser.gender}
-                            onChange={handleInputChange}
-                          />
+
                           <button
                             className="btn"
                             onClick={handleSaveEdit}
                             style={{ backgroundColor: "#efbbff" }}
                           >
-                            <i class="fa-solid fa-check"></i>
+                            <i className="fa-solid fa-check"></i>
                           </button>{" "}
                           <button
                             className="btn"
                             onClick={handleCancelEdit}
                             style={{ backgroundColor: "#efbbff" }}
                           >
-                            <i class="fa-solid fa-xmark"></i>{" "}
-                            </button>
+                            <i className="fa-solid fa-xmark"></i>{" "}
+                          </button>
                         </>
                       ) : (
                         <>
@@ -194,7 +179,7 @@ function UserList() {
                             onClick={() => handleEdit(item)}
                             style={{ backgroundColor: "#efbbff" }}
                           >
-                            <i class="fa-solid fa-user-pen"></i>
+                            <i className="fa-solid fa-user-pen"></i>
                           </button>{" "}
                           {(
                             <button
@@ -202,7 +187,7 @@ function UserList() {
                               onClick={() => deleteUser(item)}
                               style={{ backgroundColor: "#efbbff" }}
                             >
-                              <i class="fa-solid fa-user-slash"></i>{" "}
+                              <i className="fa-solid fa-user-slash"></i>{" "}
                             </button>
                           )}
                         </>
